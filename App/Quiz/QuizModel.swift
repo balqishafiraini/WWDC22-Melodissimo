@@ -9,30 +9,50 @@ struct QuizModel {
 
 var myQuiz: [QuizModel] = [
     QuizModel (
-        question: "Question 1",
-        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-        answer: 1),
+        question: "Which tiles that belongs to numeral notation (1)?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 4),
 
     QuizModel (
-        question: "Question 2",
-        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-        answer: 1),
+        question: "Which tiles that belongs to numeral notation (4.)?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 0),
     
     QuizModel (
-        question: "Question 3",
-        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-        answer: 1),
+        question: "Which tiles that belongs to numeral notation (5)?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 8),
     
     QuizModel (
-        question: "Question 4",
-        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-        answer: 1),
+        question: "Which tiles that belongs to numeral notation (7')?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 17),
     
     QuizModel (
-        question: "Question 5",
-        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-        answer: 1)
-]
+        question: "Which tiles that belongs to numeral notation (7.)?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 3),
+    QuizModel (
+        question: "Which tiles that belongs to numeral notation (1#)?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 22),
+    QuizModel (
+        question: "Which tiles that belongs to numeral notation (5')?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 15),
+    QuizModel (
+        question: "Which tiles that belongs to numeral notation (2'#)?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 28),
+    QuizModel (
+        question: "Which tiles that belongs to numeral notation (5.#)?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 20),
+    QuizModel (
+        question: "Which tiles that belongs to numeral notation (2')?",
+        options: ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+        answer: 12),
+].shuffled()
 
 func SaveScore (quiz: String, score: Int) {
     UserDefaults.standard.set(score, forKey: quiz)
