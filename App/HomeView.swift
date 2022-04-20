@@ -4,7 +4,6 @@ import Foundation
 
 struct HomeView: View {
     @State var isPresenting = false
-    
     @State var animateString = true
     @State var currentIndex : Int = 0
     @State var firstString : String = ""
@@ -18,15 +17,14 @@ struct HomeView: View {
                     Spacer()
                     VStack {
                         if animateString {
-                            Text(firstString).font(.system(size: 50)).fixedSize()
+                            Text(firstString).font(.system(size: 35)).fixedSize()
                                 .transition(AnyTransition.opacity.animation(.easeInOut(duration:0.5)))
                         }
                         if !animateString {
-                            Text(secondString).font(.system(size: 50)).fixedSize()
+                            Text(secondString).font(.largeTitle).fixedSize()
                                 .transition(AnyTransition.opacity.animation(.easeInOut(duration:0.5)))
                         }
                     }
-                    .animation(.default)
                     .onAppear {
                         firstString = greetingArray[0]
                         secondString = greetingArray[1]
@@ -95,12 +93,5 @@ struct HomeView: View {
         .onAppear(perform: {
             playBacksound(key: "backsoundOpening")
         })
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
-            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

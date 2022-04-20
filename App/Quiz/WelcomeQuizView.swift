@@ -7,7 +7,7 @@ struct WelcomeQuizView: View {
     @State var isPresentingReady = false
     @State var isPresentingLearn = false
     
-    var quizWelcomeArr = ["", "Congratulations! 🎉 Now you know how to play Melodica. In the previous section, we got help from the numeral notations. So we can easily detected which tiles that we should press 🥰", "But, what if we didn't get help from the numeral notation? 😱 In my case when I'm learning Melodica, I'm still struggling to play it if there's no numeral notation 😫", "Now, I dare you to take a quiz to test, do you know what tiles belongs to which numeral notation? 😏 There will be 10 random questions, take your time to answer it by press the tiles for the answer. Good luck! 🤩"]
+    var quizWelcomeArr = ["", "Congratulations! 🎉 Now you know how to play Melodica. In the previous section, we got help from the numeral notations. So we can easily detected which tiles that we should press 🥰", "But, what if we didn't get help from the numeral notation? 😱 In my case when I'm learning Melodica, I'm still struggling to play it if there's no numeral notation 😫", "Now, I dare you to take a quiz to test, do you know what tiles belongs to which numeral notation? 😏 There will be 11 questions, take your time to answer it by press the tiles for the answer. Good luck! 🤩"]
     
     var body: some View {
         VStack {
@@ -66,16 +66,17 @@ struct WelcomeQuizView: View {
                 HStack {
                     VStack {
                         Text("No, I'm not ready 😭")
-                            .font(.largeTitle)
                         Button {
                             isPresentingLearn = true
+                            playBacksound(key: "buttonClicked")
                         } label: {
-                            Text("TAKE ME BACK TO LEARN IT")
-                                .frame(width: 450, height: 100)
+                            Text("BACK TO LEARN")
+                                .frame(width: 300, height: 100)
                                 .background(.white)
                                 .foregroundColor(.blue)
                                 .cornerRadius(20)
                                 .font(.title)
+                                
                             
                             NavigationLink(destination: TilesView()
                                 .navigationBarBackButtonHidden(true), isActive: $isPresentingLearn) {
@@ -87,12 +88,12 @@ struct WelcomeQuizView: View {
                     Spacer()
                     VStack {
                         Text("Yes, I'm ready! 💪")
-                            .font(.largeTitle)
                         Button {
                             isPresentingReady = true
+                            playBacksound(key: "buttonClicked")
                         } label: {
-                            Text("LET'S GO TO THE QUIZ")
-                                .frame(width: 450, height: 100)
+                            Text("START QUIZ")
+                                .frame(width: 300, height: 100)
                                 .background(.white)
                                 .foregroundColor(.blue)
                                 .cornerRadius(20)
@@ -104,12 +105,12 @@ struct WelcomeQuizView: View {
                                 }
                         }
                     }
-                }
+                }.padding()
             }
-            .padding()
             .onAppear(perform: {
-                playBacksound(key: "backsoundQuiz")
+                playBacksound(key: "backsoundOpening")
             })
+            .padding()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(

@@ -65,6 +65,7 @@ struct WelcomeTilesView: View {
                 
                 Button {
                     isPresenting = true
+                    playBacksound(key: "buttonClicked")
                 } label: {
                     Text("PLAY MELODICA")
                         .frame(width: 300, height: 100)
@@ -78,6 +79,7 @@ struct WelcomeTilesView: View {
                             EmptyView()
                         }
                 }
+                .padding()
             }
             .padding()
         }
@@ -90,11 +92,5 @@ struct WelcomeTilesView: View {
             .ignoresSafeArea()
             
         )
-    }
-}
-
-struct WelcomeTilesView_Previews: PreviewProvider {
-    static var previews: some View {
-        WelcomeTilesView()
     }
 }
