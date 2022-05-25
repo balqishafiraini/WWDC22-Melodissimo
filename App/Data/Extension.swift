@@ -1,6 +1,7 @@
 import SwiftUI
 import Foundation
 
+//style white tiles
 struct WhiteTilesStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
@@ -12,7 +13,7 @@ struct WhiteTilesStyle: ButtonStyle {
     }
 }
 
-
+//style black tiles
 struct BlackTilesStyle: ButtonStyle {
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
@@ -23,6 +24,7 @@ struct BlackTilesStyle: ButtonStyle {
     }
 }
 
+//button white tiles
 struct WhiteTilesButton: View {
     var keySound: String
     var labelNot: String
@@ -38,6 +40,7 @@ struct WhiteTilesButton: View {
     }
 }
 
+//button black tiles
 struct BlackTilesButton: View {
     var keySound: String
     var labelNot: String
@@ -53,8 +56,7 @@ struct BlackTilesButton: View {
     }
 }
 
-
-
+//array in homeview
 var greetingArray = [
     "Hello, my name is Balqis 👋",
     "I am from Indonesia 🇮🇩",
@@ -69,13 +71,7 @@ var greetingArray = [
     "So people who didn't have Melodica,",
     "Can learn how to play it."]
 
-var goodbyeArray = [
-    "Did you know?",
-    "The tones in the quiz that you played earlier formed a melody",
-    "from the song Indonesia Pusaka by Ismail Marzuki.",
-    "One of The Indonesia National Song",
-    "that are often played when Indonesian students learn melodica."]
-
+//tabindicator slider
 struct CustomeTabIndicator: View {
      
     var count: Int
@@ -89,13 +85,11 @@ struct CustomeTabIndicator: View {
                 ForEach(0..<count,id: \.self) { index in
                      
                     ZStack {
-                        //image  index start from 1..
                         if (current - 1) == index {
                             Circle()
                                 .fill(Color.blue)
                         }
                         else {
-                             
                             Circle()
                                 .fill(Color.white)
                                 .overlay(

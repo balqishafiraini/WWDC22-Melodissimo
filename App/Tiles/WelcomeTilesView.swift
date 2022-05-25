@@ -18,17 +18,11 @@ struct WelcomeTilesView: View {
                     //Custom Scroll Effect
                     GeometryReader{
                         proxy -> AnyView in
-                        
                         let minX = proxy.frame(in: .global).minX
-                        
                         let width = UIScreen.main.bounds.width
-                        
                         let progress = -minX / (width * 2)
-                        
                         var scale = progress > 0 ? 1 - progress : 1 + progress
-                        
                         scale = scale < 0.7 ? 0.7 : scale
-                        
                         return AnyView(
                             VStack{
                                 Spacer()
@@ -43,8 +37,6 @@ struct WelcomeTilesView: View {
                                     .foregroundColor(.black)
                                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
                                     .padding()
-                                
-                                
                             }
                                 .frame(maxHeight: .infinity, alignment: .center)
                                 .scaleEffect(scale)
@@ -62,7 +54,7 @@ struct WelcomeTilesView: View {
                 .padding(.top)
             
             VStack(spacing:15) {
-                
+                Text("Please make sure you read all instructions in the slider")
                 Button {
                     isPresenting = true
                     playBacksound(key: "buttonClicked")

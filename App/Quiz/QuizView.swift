@@ -1,20 +1,10 @@
-//
-//  SwiftUIView.swift
-//  
-//
-//  Created by Balqis on 17/04/22.
-//
-
 import SwiftUI
+import Foundation
 
 struct QuizView: View {
     
     @State var isPresenting = false
-    
-    //number of question
     @State var i: Int = 0
-    
-    //score
     @State var score = 0
     @State private var showActionSheet = false
     
@@ -420,10 +410,10 @@ struct QuizView: View {
                             
                         }
                         Text("⚠️ If your screen doesn't fit right, scroll to see the contents that unreachable in your screen")
-                            .font(.body)
+                            .font(.title3)
                             .padding()
                         Text("⚠️ The question changes automatically when you press the answer's tiles")
-                            .font(.body)
+                            .font(.title3)
                             .padding()
                     }
                     else {

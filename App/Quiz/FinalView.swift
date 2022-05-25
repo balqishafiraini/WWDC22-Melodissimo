@@ -6,6 +6,7 @@ struct FinalView: View {
     @State var isPresentingQuiz = false
     @State var isPresentingLearn = false
     @State var isPresentingAnswer = false
+    
     var score: Int
     
     var body: some View {

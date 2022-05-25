@@ -16,6 +16,7 @@ struct HomeView: View {
                 VStack {
                     Spacer()
                     VStack {
+                        //opening animation
                         if animateString {
                             Text(firstString).font(.system(size: 35)).fixedSize()
                                 .transition(AnyTransition.opacity.animation(.easeInOut(duration:0.5)))
@@ -92,6 +93,7 @@ struct HomeView: View {
         .navigationViewStyle(StackNavigationViewStyle())
         .onAppear(perform: {
             playBacksound(key: "backsoundOpening")
+            player.numberOfLoops = -1
         })
     }
 }

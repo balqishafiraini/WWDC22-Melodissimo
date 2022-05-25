@@ -7,7 +7,7 @@ struct WelcomeQuizView: View {
     @State var isPresentingReady = false
     @State var isPresentingLearn = false
     
-    var quizWelcomeArr = ["", "Congratulations! 🎉 Now you know how to play Melodica. In the previous section, we got help from the numeral notations. So we can easily detected which tiles that we should press 🥰", "But, what if we didn't get help from the numeral notation? 😱 In my case when I'm learning Melodica, I'm still struggling to play it if there's no numeral notation 😫", "Now, I dare you to take a quiz to test, do you know what tiles belongs to which numeral notation? 😏 There will be 11 questions, take your time to answer it by press the tiles for the answer. Good luck! 🤩"]
+    var quizWelcomeArr = ["", "Congratulations! 🎉 Now you know how to play Melodica. In the previous section, we got help from the numeral notations. So we can easily detected which tiles that we should press 🥰", "But, what if we didn't get help from the numeral notation? 😱 In my case when I'm learning Melodica, I'm still struggling to play it if there's no numeral notation label 😫", "Now, I dare you to take a quiz to test, do you know what tiles belongs to which numeral notation? 😏 There will be 10 questions, take your time to answer it by press the tiles for the answer. Good luck! 🤩"]
     
     var body: some View {
         VStack {
@@ -19,15 +19,10 @@ struct WelcomeQuizView: View {
                     //Custom Scroll Effect
                     GeometryReader{
                         proxy -> AnyView in
-                        
                         let minX = proxy.frame(in: .global).minX
-                        
                         let width = UIScreen.main.bounds.width
-                        
                         let progress = -minX / (width * 2)
-                        
                         var scale = progress > 0 ? 1 - progress : 1 + progress
-                        
                         scale = scale < 0.7 ? 0.7 : scale
                         
                         return AnyView(
@@ -63,6 +58,7 @@ struct WelcomeQuizView: View {
                 .padding(.top)
             
             VStack(spacing:15) {
+                Text("Please make sure you read all instructions in the slider")
                 HStack {
                     VStack {
                         Text("No, I'm not ready 😭")
@@ -109,6 +105,7 @@ struct WelcomeQuizView: View {
             }
             .onAppear(perform: {
                 playBacksound(key: "backsoundOpening")
+                player.numberOfLoops = -1
             })
             .padding()
         }
